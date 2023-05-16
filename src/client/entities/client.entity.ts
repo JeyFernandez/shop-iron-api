@@ -14,8 +14,8 @@ export class Client {
     @Column({type:'text'})
     direction:string;
 
-    @Column({type:'text'})
-    phoneNumber:string;
+    @Column({type:'numeric'})
+    phoneNumber:number;
 
     @Column({type:'text'})
     dni:string;
