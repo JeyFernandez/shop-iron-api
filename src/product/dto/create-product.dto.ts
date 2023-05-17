@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString, MinLength } from "class-validator";
+import { IsArray, IsNotEmpty, IsNumber, IsOptional, IsString, MinLength } from "class-validator";
 
 export class CreateProductDto {
     @IsString()
@@ -23,4 +23,9 @@ export class CreateProductDto {
     @IsNumber()
     @IsNotEmpty()
     stock:number
+
+    @IsString()
+    @IsOptional()
+    @IsArray()
+    images?:string[]
 }

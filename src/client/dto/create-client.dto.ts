@@ -1,4 +1,4 @@
-import { IsString, IsNotEmpty, IsNumber, MinLength } from 'class-validator';
+import { IsString, IsNotEmpty, IsNumber, MinLength, IsEmail } from 'class-validator';
 
 export class CreateClientDto{
     
@@ -17,9 +17,10 @@ export class CreateClientDto{
     @MinLength(2)
     direction: string;
 
-    @IsNumber()
+    @IsString()
     @IsNotEmpty()
-    phoneNumber: number;
+    @IsEmail()
+    email:string
 
     @IsString()
     @IsNotEmpty()
