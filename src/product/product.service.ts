@@ -28,14 +28,13 @@ export class ProductService {
     }
 
   findAll() {
-    return this.productRepository.find({relations:['iamges']})
+    return this.productRepository.find({relations:['images']})
   }
 
   findOne(id: string) {
     return this.productRepository.findOneBy({id});
   }
 
-    //actualizar product especifico
     async update(id: string, cambio: CreateProductDto){
       const {images, ...updateAll} = cambio;
 
@@ -48,7 +47,6 @@ export class ProductService {
       await queryRunner.connect();
       await queryRunner.startTransaction();
       
-      //si vienen nuevas imagenes que se eliminen las anteriores
       if(images){
           await queryRunner.manager.delete(ProductImage, {product: {id}});
           

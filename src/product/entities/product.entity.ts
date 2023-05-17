@@ -21,9 +21,9 @@ export class Product {
     @Column({type: 'numeric'})
     stock: number;
 
-    @OneToMany(()=> ProductImage,
-    (productImage) => productImage.product,
-    {cascade: true, eager: true}
-    )
-    images?: ProductImage[];
+    @OneToMany(() => ProductImage, (productImage) => productImage.product, {
+        cascade: true,
+        eager: true,
+      })
+      images?: ProductImage[];
 }
