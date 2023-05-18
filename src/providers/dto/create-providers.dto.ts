@@ -1,5 +1,7 @@
 import { IsArray, IsNotEmpty, IsNumber, IsOptional, IsString, MinLength } from "class-validator";
 
+//Hola soy un DTO
+
 export class CreateProviderDto {
     @IsString()
     @IsNotEmpty()
