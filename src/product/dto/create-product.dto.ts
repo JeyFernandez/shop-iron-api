@@ -24,8 +24,12 @@ export class CreateProductDto {
     @IsNotEmpty()
     stock:number
 
+    @IsString({each: true})
+    @IsArray()
+    @IsOptional()
+    images?:string[];
+
     @IsString()
     @IsOptional()
-    @IsArray()
-    images?:string[]
+    filename:string;
 }

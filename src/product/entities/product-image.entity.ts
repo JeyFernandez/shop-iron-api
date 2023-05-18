@@ -1,17 +1,16 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Product } from './product.entity';
-
 @Entity()
-
-export default class ProductImage{
+export class ProductImage{
     @PrimaryGeneratedColumn('uuid')
-    id:string;
-
+    id: string;
+    
     @Column()
-    url:string;
-
-    @ManyToOne(()=>Product,(product)=> product.images,
-    {onDelete: 'CASCADE'}
+    url: string;
+    //relacion de muchos a uno
+    // muchas imagenes pueden ser de un producto
+    @ManyToOne(() => Product, (product) => product.images,
+    {onDelete:'CASCADE'}
     )
-    product: Product
+    product:Product;
 }
