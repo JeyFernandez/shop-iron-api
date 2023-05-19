@@ -28,8 +28,4 @@ export class CreateProductDto {
     @IsArray()
     @IsOptional()
     images?:string[];
-
-    @IsString()
-    @IsOptional()
-    filename:string;
 }
